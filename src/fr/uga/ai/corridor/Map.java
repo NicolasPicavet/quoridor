@@ -1,5 +1,7 @@
 package fr.uga.ai.corridor;
 
+import java.util.HashMap;
+
 public class Map {
 
     public final static int PLAYER_MAP_SIZE = 9;
@@ -11,6 +13,8 @@ public class Map {
     PlayerSquare[][] playerMap = new PlayerSquare[PLAYER_MAP_SIZE][PLAYER_MAP_SIZE];
     WallSquare[][] wallMap = new WallSquare[WALL_MAP_SIZE][WALL_MAP_SIZE];
 
+    java.util.Map<Integer, Coordinates> playerPositions = new HashMap<>();
+
     public Map() {
         // initialize maps with empty squares
         for (int x = 0; x < PLAYER_MAP_SIZE; x++)
@@ -19,6 +23,26 @@ public class Map {
         for (int x = 0; x < WALL_MAP_SIZE; x++)
             for (int y = 0; y < WALL_MAP_SIZE; y++)
                 wallMap[x][y] = new WallSquare();
+        // initialize player position
+        playerPositions.put(1, new Coordinates(0, 4));
+        playerPositions.put(2, new Coordinates(8, 4));
+    }
+
+    public boolean setPlayerPosition(int playerId, Coordinates coordinates) {
+        // TODO check previous / new position : wall, distance
+        // remove previous position
+        playerMap[playerPositions.get(playerId).x][playerPositions.get(playerId).y].playerId = 0;
+        // add new position
+        playerPositions.put(playerId, coordinates);
+        playerMap[coordinates.x][coordinates.y].playerId = playerId;
+        return true;
+    }
+
+    public boolean buildWall(Coordinates coordinates, WallSquare.State state) {
+        // TODO check wall buildable
+        // build wall
+        wallMap[coordinates.x][coordinates.y].build(state);
+        return true;
     }
 
     public String draw() {

@@ -16,11 +16,18 @@ public class WallSquare {
         this.state = state;
     }
 
-    public void setHorizontal() {
+    public void build(State state) {
+        if (state == State.VERTICAL)
+            setVertical();
+        if (state == State.HORIZONTAL)
+            setHorizontal();
+    }
+
+    void setHorizontal() {
         state = isVertical() ? State.BOTH : State.HORIZONTAL;
     }
 
-    public void setVertical() {
+    void setVertical() {
         state = isHorizontal() ? State.BOTH : State.VERTICAL;
     }
 

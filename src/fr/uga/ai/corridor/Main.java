@@ -16,32 +16,23 @@ public class Main {
         while(game) {
             println(map.draw());
 
-            /*println("(1) Build wall");
-            println("(2) Move");
-            boolean buildChoice = readInteger(1, 2) == 1;
-            print("x = ");
-            x = readInteger(1, map.getSizeX()) - 1;
-            print("y = ");
-            y = readInteger(1, map.getSizeY()) - 1;
-            *//*int[] coordinates = readMapCoordinate(1, map.getSizeX(), 1, map.getSizeY());
-            x = coordinates[0];
-            y = coordinates[1];*//*
+            Coordinates coordinates = readCoordinates();
 
-            boolean actionSuccess = false;
-            if (buildChoice)
-                actionSuccess = map.addWall(x , y, playingPlayer);
-            else
-                actionSuccess = map.placeWithConditionPlayer(x , y, playingPlayer);
-            game = !map.playerInWinPosition(playingPlayer);
-            if (game)
-                if (actionSuccess) {
-                    playingPlayer++;
-                    if (playingPlayer > 2)
-                        playingPlayer = 1;
-                }*/
-            String read = br.readLine();
+            if (coordinates.isAMoveAction()) {
+                map.setPlayerPosition(playingPlayer, coordinates);
+            } else {
+                map.buildWall(coordinates, coordinates.state);
+            }
+
+            // win
+
+            // action success
+            if (true) {
+                playingPlayer++;
+                if (playingPlayer > 2)
+                    playingPlayer = 1;
+            }
         }
-        println("Player " + playingPlayer + " wins !");
         println("--- / ---");
     }
 
@@ -51,5 +42,33 @@ public class Main {
 
     static void print(String s) {
         System.out.print(s);
+    }
+
+    static Coordinates readCoordinates() throws IOException {
+        while (true) {
+            try {
+                String read = br.readLine();
+                boolean moveAction = false;
+                int x;
+                String firstChar = read.substring(0, 1);
+                int y = Integer.valueOf(read.substring(1, 2));
+                if (Map.PLAYER_MAP_LABELS.contains(firstChar)) {
+                    // move player
+                    moveAction = true;
+                    x = Map.PLAYER_MAP_LABELS.indexOf(firstChar);
+                    return new Coordinates(x, y, moveAction);
+                } else {
+                    // build wall
+                    x = Map.WALL_MAP_LABELS.indexOf(firstChar);
+                    String thirdChar = read.substring(2, 3);
+                    if (thirdChar.contains("h"))
+                        return new Coordinates(x, y, WallSquare.State.HORIZONTAL);
+                    if (thirdChar.contains("v"))
+                        return new Coordinates(x, y, WallSquare.State.VERTICAL);
+                }
+            } catch (Exception e) {
+                // do nothing
+            }
+        }
     }
 }
