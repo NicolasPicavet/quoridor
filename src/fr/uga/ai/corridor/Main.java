@@ -12,7 +12,7 @@ public class Main {
         boolean game = true;
         Map map = new Map();
 
-        println("--- Corridor ---");
+        println(" ---- Corridor ----");
         while(game) {
             println(map.draw());
 

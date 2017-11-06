@@ -25,8 +25,11 @@ public class Map {
         String map = "";
         // write player map column labels
         map += " |";
-        for (int xplayer = 0; xplayer < PLAYER_MAP_SIZE; xplayer++)
-            map += PLAYER_MAP_LABELS.charAt(xplayer) + " ";
+        for (int xplayer = 0; xplayer < PLAYER_MAP_SIZE; xplayer++) {
+            map += PLAYER_MAP_LABELS.charAt(xplayer);
+            if (xplayer < PLAYER_MAP_SIZE - 1)
+                map += " ";
+        }
         map += "|\n";
         // write wall map column labels
         map += " |";
@@ -49,12 +52,12 @@ public class Map {
                 int xwall = xplayer;
                 // player square
                 map += playerMap[xplayer][yplayer].toString();
-                if (xwall < WALL_MAP_SIZE && ywallBottom < WALL_MAP_SIZE) {
-                    // top right side wall
+                if (xwall < WALL_MAP_SIZE) {
+                    // top right wall
                     if (ywallTop > 0 && wallMap[xwall][ywallTop].isVertical())
                         map += wallMap[xwall][ywallTop].toString();
-                        // bottom right side wall
-                    else if (wallMap[xwall][ywallBottom].isVertical())
+                    // bottom right wall
+                    else if (ywallBottom < WALL_MAP_SIZE && wallMap[xwall][ywallBottom].isVertical())
                         map += wallMap[xwall][ywallBottom].toString();
                     else
                         map += " ";
@@ -62,8 +65,8 @@ public class Map {
             }
             map += "|\n";
             // wall map line
-            map += " |";
             if (yplayer < WALL_MAP_SIZE) {
+                map += " |";
                 int ywall = yplayer;
                 for (int xwall = 0; xwall < WALL_MAP_SIZE; xwall++) {
                     if (wallMap[xwall][ywall].isHorizontal())
@@ -72,10 +75,22 @@ public class Map {
                         map += " " + wallMap[xwall][ywall].toString();
                     else
                         map += "  ";
+                    if (xwall == WALL_MAP_SIZE - 1) {
+                        if (wallMap[xwall][ywall].isHorizontal())
+                            map += wallMap[xwall][ywall].toString();
+                        else
+                            map += " ";
+                    }
+
                 }
+                map += "|\n";
             }
-            map += "|\n";
         }
+        // separation
+        map += "-|";
+        for (int x = 0; x < WALL_MAP_SIZE + PLAYER_MAP_SIZE; x++)
+            map += "-";
+        map += "|\n";
         return map;
     }
 }
