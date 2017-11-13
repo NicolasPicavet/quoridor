@@ -1,8 +1,8 @@
-package fr.uga.ai.corridor;
+package fr.uga.ai.corridor.map;
 
 public class WallSquare {
 
-    enum State {
+    public enum State {
         HORIZONTAL, VERTICAL, BOTH, NONE;
     }
 
@@ -45,6 +45,6 @@ public class WallSquare {
 
     @Override
     public String toString() {
-        return state == State.NONE ? " " : "|";
+        return hasWall() ? "|" : ".";
     }
 }

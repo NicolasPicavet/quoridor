@@ -1,6 +1,6 @@
-package fr.uga.ai.corridor;
+package fr.uga.ai.corridor.map;
 
-import java.util.HashMap;
+import fr.uga.ai.corridor.Player;
 
 public class Map {
 
@@ -10,12 +10,12 @@ public class Map {
     public final static String PLAYER_MAP_LABELS = "ABCDEFGHI";
     public final static String WALL_MAP_LABELS = "abcdefgh";
 
+    private static Map instance = new Map();
+
     PlayerSquare[][] playerMap = new PlayerSquare[PLAYER_MAP_SIZE][PLAYER_MAP_SIZE];
     WallSquare[][] wallMap = new WallSquare[WALL_MAP_SIZE][WALL_MAP_SIZE];
 
-    java.util.Map<Integer, Coordinates> playerPositions = new HashMap<>();
-
-    public Map() {
+    private Map() {
         // initialize maps with empty squares
         for (int x = 0; x < PLAYER_MAP_SIZE; x++)
             for (int y = 0; y < PLAYER_MAP_SIZE; y++)
@@ -23,19 +23,28 @@ public class Map {
         for (int x = 0; x < WALL_MAP_SIZE; x++)
             for (int y = 0; y < WALL_MAP_SIZE; y++)
                 wallMap[x][y] = new WallSquare();
-        // initialize player position
-        playerPositions.put(1, new Coordinates(0, 4));
-        playerPositions.put(2, new Coordinates(8, 4));
     }
 
-    public boolean setPlayerPosition(int playerId, Coordinates coordinates) {
-        // TODO check previous / new position : wall, distance
-        // remove previous position
-        playerMap[playerPositions.get(playerId).x][playerPositions.get(playerId).y].playerId = 0;
-        // add new position
-        playerPositions.put(playerId, coordinates);
-        playerMap[coordinates.x][coordinates.y].playerId = playerId;
-        return true;
+    public static Map getInstance() {
+        return instance;
+    }
+
+    public boolean removePlayer(Player player) {
+        Coordinates coordinates = player.getCoordinates();
+        if (playerMap[coordinates.x][coordinates.y].hasPlayer(player)) {
+            playerMap[coordinates.x][coordinates.y].removePlayer();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean addPlayer(Player player) {
+        Coordinates coordinates = player.getCoordinates();
+        if (playerMap[coordinates.x][coordinates.y].isEmpty()) {
+            playerMap[coordinates.x][coordinates.y].setPlayer(player);
+            return true;
+        }
+        return false;
     }
 
     public boolean buildWall(Coordinates coordinates, WallSquare.State state) {
@@ -114,7 +123,12 @@ public class Map {
         map += "-|";
         for (int x = 0; x < WALL_MAP_SIZE + PLAYER_MAP_SIZE; x++)
             map += "-";
-        map += "|\n";
+        map += "|";
+        // players wall bank
+        map += " " +
+                Player.PLAYER_ONE.toString() + " " + Integer.toString(Player.PLAYER_ONE.getWallBank()) +
+                " - " +
+                Player.PLAYER_TWO.toString() + " " + Integer.toString(Player.PLAYER_TWO.getWallBank()) + "\n";
         return map;
     }
 }
