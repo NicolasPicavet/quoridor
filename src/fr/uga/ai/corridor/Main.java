@@ -16,7 +16,7 @@ public class Main {
 
         println(" ---- Corridor ----");
         while(game) {
-            println(map.draw());
+            println(map.draw(playingPlayer));
 
             actionSuccess = playingPlayer.execute(readAction());
 

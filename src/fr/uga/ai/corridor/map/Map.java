@@ -54,13 +54,10 @@ public class Map {
     }
 
     public boolean buildWall(Coordinates coordinates, WallSquare.State state) {
-        // TODO check wall buildable
-        // build wall
-        wallMap[coordinates.x][coordinates.y].build(state);
-        return true;
+        return wallMap[coordinates.x][coordinates.y].build(state);
     }
 
-    public String draw() {
+    public String draw(Player playingPlayer) {
         String map = "";
         // write player map column labels
         map += " |";
@@ -79,7 +76,9 @@ public class Map {
         map += "-|";
         for (int x = 0; x < WALL_MAP_SIZE + PLAYER_MAP_SIZE; x++)
             map += "-";
-        map += "|\n";
+        map += "|";
+        // playing player
+        map += " Player " + playingPlayer.toString() + " turn\n";
         // write maps
         for (int yplayer = 0; yplayer < PLAYER_MAP_SIZE; yplayer++) {
             // line label

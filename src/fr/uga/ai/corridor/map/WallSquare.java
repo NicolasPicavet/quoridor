@@ -24,23 +24,30 @@ public class WallSquare {
         sides.put(WallSquareSide.Side.BOTTOM, bottom);
     }
 
-    public void build(State state) {
+    public boolean build(State state) {
         if (state == State.VERTICAL)
-            setVertical();
+            return setVertical();
         if (state == State.HORIZONTAL)
-            setHorizontal();
+            return setHorizontal();
+        return false;
     }
 
-    void setHorizontal() {
+    private boolean setHorizontal() {
+        if (sides.get(WallSquareSide.Side.LEFT).hasWall() || sides.get(WallSquareSide.Side.RIGHT).hasWall())
+            return false;
         state = isVertical() ? State.BOTH : State.HORIZONTAL;
         sides.get(WallSquareSide.Side.LEFT).setWall(true);
         sides.get(WallSquareSide.Side.RIGHT).setWall(true);
+        return true;
     }
 
-    void setVertical() {
+    private boolean setVertical() {
+        if (sides.get(WallSquareSide.Side.TOP).hasWall() || sides.get(WallSquareSide.Side.BOTTOM).hasWall())
+            return false;
         state = isHorizontal() ? State.BOTH : State.VERTICAL;
         sides.get(WallSquareSide.Side.TOP).setWall(true);
         sides.get(WallSquareSide.Side.BOTTOM).setWall(true);
+        return true;
     }
 
     public boolean isHorizontal() {
