@@ -12,17 +12,23 @@ public class Map {
 
     private static Map instance = new Map();
 
-    PlayerSquare[][] playerMap = new PlayerSquare[PLAYER_MAP_SIZE][PLAYER_MAP_SIZE];
-    WallSquare[][] wallMap = new WallSquare[WALL_MAP_SIZE][WALL_MAP_SIZE];
+    private PlayerSquare[][] playerMap = new PlayerSquare[PLAYER_MAP_SIZE][PLAYER_MAP_SIZE];
+    private WallSquare[][] wallMap = new WallSquare[WALL_MAP_SIZE][WALL_MAP_SIZE];
 
     private Map() {
-        // initialize maps with empty squares
+        // init with empty player square
         for (int x = 0; x < PLAYER_MAP_SIZE; x++)
             for (int y = 0; y < PLAYER_MAP_SIZE; y++)
                 playerMap[x][y] = new PlayerSquare();
+        // init with empty wall square
         for (int x = 0; x < WALL_MAP_SIZE; x++)
-            for (int y = 0; y < WALL_MAP_SIZE; y++)
-                wallMap[x][y] = new WallSquare();
+            for (int y = 0; y < WALL_MAP_SIZE; y++) {
+                WallSquareSide left = x - 1 < 0 ? new WallSquareSide() : wallMap[x - 1][y].sides.get(WallSquareSide.Side.RIGHT);
+                WallSquareSide top = y - 1 < 0 ? new WallSquareSide() : wallMap[x][y - 1].sides.get(WallSquareSide.Side.BOTTOM);
+                WallSquareSide right =  new WallSquareSide();
+                WallSquareSide bottom =  new WallSquareSide();
+                wallMap[x][y] = new WallSquare(left, top, right, bottom);
+            }
     }
 
     public static Map getInstance() {
@@ -86,14 +92,15 @@ public class Map {
                 // player square
                 map += playerMap[xplayer][yplayer].toString();
                 if (xwall < WALL_MAP_SIZE) {
-                    // top right wall
-                    if (ywallTop > 0 && wallMap[xwall][ywallTop].isVertical())
-                        map += wallMap[xwall][ywallTop].toString();
-                    // bottom right wall
-                    else if (ywallBottom < WALL_MAP_SIZE && wallMap[xwall][ywallBottom].isVertical())
-                        map += wallMap[xwall][ywallBottom].toString();
+                    // check top right wall
+                    if (ywallTop >= 0 && wallMap[xwall][ywallTop].isVertical())
+                        map += wallMap[xwall][ywallTop].toString(WallSquareSide.Side.BOTTOM);
                     else
-                        map += " ";
+                        // check bottom right wall
+                        if (ywallBottom < WALL_MAP_SIZE)
+                            map += wallMap[xwall][ywallBottom].toString(WallSquareSide.Side.TOP);
+                        else
+                            map += WallSquare.noWallCharacter;
                 }
             }
             map += "|\n";
@@ -102,19 +109,10 @@ public class Map {
                 map += " |";
                 int ywall = yplayer;
                 for (int xwall = 0; xwall < WALL_MAP_SIZE; xwall++) {
-                    if (wallMap[xwall][ywall].isHorizontal())
-                        map += wallMap[xwall][ywall].toString() + wallMap[xwall][ywall].toString();
-                    else if (wallMap[xwall][ywall].isVertical())
-                        map += " " + wallMap[xwall][ywall].toString();
-                    else
-                        map += "  ";
-                    if (xwall == WALL_MAP_SIZE - 1) {
-                        if (wallMap[xwall][ywall].isHorizontal())
-                            map += wallMap[xwall][ywall].toString();
-                        else
-                            map += " ";
-                    }
-
+                    map += wallMap[xwall][ywall].toString(WallSquareSide.Side.LEFT);
+                    map += "+";
+                    if (xwall + 1 == WALL_MAP_SIZE)
+                        map += wallMap[xwall][ywall].toString(WallSquareSide.Side.RIGHT);
                 }
                 map += "|\n";
             }
