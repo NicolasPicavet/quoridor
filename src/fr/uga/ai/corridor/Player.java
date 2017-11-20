@@ -35,11 +35,11 @@ public class Player {
     }
 
     public boolean execute(Action action) {
-        boolean built = false;
         // move
         if (action.getType() == Action.Type.MOVE)
             return setCoordinates(action.getCoordinates());
         // build wall
+        boolean built = false;
         if (wallBank > 0) {
             if (action.getType() == Action.Type.BUILD_HORIZONTAL)
                 built = Map.getInstance().buildWall(action.getCoordinates(), WallSquare.State.HORIZONTAL);
@@ -59,11 +59,14 @@ public class Player {
     private boolean setCoordinates(Coordinates coordinates) {
         boolean removed = false;
         boolean added = false;
-        if (coordinates != null)
+        boolean validMove = coordinates.x == this.coordinates.x && (coordinates.y == this.coordinates.y - 1 || coordinates.y == this.coordinates.y + 1)
+                || coordinates.y == this.coordinates.y && (coordinates.x == this.coordinates.x - 1 || coordinates.x == this.coordinates.x + 1);
+        if (validMove) {
             removed = Map.getInstance().removePlayer(this);
-        this.coordinates = coordinates;
-        added = Map.getInstance().addPlayer(this);
-        return (coordinates == null || removed) && added;
+            this.coordinates = coordinates;
+            added = Map.getInstance().addPlayer(this);
+        }
+        return (coordinates == null || removed) && added && validMove;
     }
 
     public int getWallBank() {

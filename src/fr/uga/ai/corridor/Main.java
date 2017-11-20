@@ -15,28 +15,27 @@ public class Main {
         Map map = Map.getInstance();
 
         println(" ---- Corridor ----");
+
         while(game) {
             println(map.draw(playingPlayer));
 
             actionSuccess = playingPlayer.execute(readAction());
 
-            if (actionSuccess) {
+            if (actionSuccess)
                 // win
                 if (playingPlayer.hasWin()) {
                     game = false;
                     win = true;
-                } else {
-                    // change playing player
+                // change playing player
+                } else
                     if (playingPlayer == Player.PLAYER_ONE)
                         playingPlayer = Player.PLAYER_TWO;
                     else
                         playingPlayer = Player.PLAYER_ONE;
-                }
-            }
         }
-        if (win) {
+        if (win)
             println("Player " + playingPlayer.toString() + " has won !");
-        }
+
         println("--- / ---");
     }
 }

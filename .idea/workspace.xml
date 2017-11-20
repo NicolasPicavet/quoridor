@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d0535c-62af-4792-9b30-6a2612d61dc7" name="Default" comment="fix wall drawing">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Corridor/fr/uga/ai/corridor/Main.class" afterPath="" />
+    <list default="true" id="b4d0535c-62af-4792-9b30-6a2612d61dc7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/corridor/Main.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/corridor/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Map.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/WallSquare.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/WallSquare.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state relative-caret-position="645">
+              <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="850">
               <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="e#1426#1427#0" expanded="true" />
@@ -141,8 +140,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+            <state relative-caret-position="207">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#846#847#0" expanded="true" />
@@ -151,8 +150,8 @@
                 <element signature="e#953#954#0" expanded="true" />
                 <element signature="e#1711#1712#0" expanded="true" />
                 <element signature="e#1745#1746#0" expanded="true" />
-                <element signature="e#2152#2153#0" expanded="true" />
-                <element signature="e#2183#2184#0" expanded="true" />
+                <element signature="e#2471#2472#0" expanded="true" />
+                <element signature="e#2502#2503#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -212,13 +211,13 @@
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Coordinates.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/PlayerSquare.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Coordinates.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Action.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/WallSquareSide.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/WallSquare.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Main.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Map.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Main.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java" />
       </list>
     </option>
   </component>
@@ -420,7 +419,7 @@
       <workItem from="1509970076527" duration="99000" />
       <workItem from="1509975136298" duration="7064000" />
       <workItem from="1510046572408" duration="166000" />
-      <workItem from="1510593198713" duration="12339000" />
+      <workItem from="1510593198713" duration="14222000" />
     </task>
     <task id="LOCAL-00001" summary="first functional version&#10;(bad rules)">
       <created>1509956679518</created>
@@ -471,11 +470,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511171240554</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- check wall buildable&#10;- display player turn">
+      <created>1511171751788</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1511171751788</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46818000" />
+    <option name="totallyTimeSpent" value="48701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,7 +538,8 @@
     <MESSAGE value="add first input move/build prototype&#10;horizontal wall bug" />
     <MESSAGE value="- Add Action : handle type of action to do&#10;- Refactor Coordinates&#10;- Add Player : handle everything related to a player&#10;- Move several files&#10;- Remove old version&#10;- Add IO class : handle In/Out&#10;- Add win condition&#10;- Add wall bank" />
     <MESSAGE value="fix wall drawing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix wall drawing" />
+    <MESSAGE value="- check wall buildable&#10;- display player turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="- check wall buildable&#10;- display player turn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -833,16 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Corridor/fr/uga/ai/corridor/Main.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -913,24 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1745#1746#0" expanded="true" />
-            <element signature="e#2152#2153#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/map/WallSquare.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -943,23 +922,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#1426#1427#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/map/Map.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="207">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#878#879#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#1711#1712#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#2471#2472#0" expanded="true" />
+            <element signature="e#2502#2503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/corridor/IO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

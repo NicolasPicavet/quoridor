@@ -35,6 +35,8 @@ public class IO {
                 }
             } catch (IOException e) {
                 // do nothing
+            } catch (NumberFormatException e) {
+                // do nothing
             }
         }
     }
