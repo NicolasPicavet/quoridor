@@ -5,9 +5,6 @@ import fr.uga.ai.corridor.map.Map;
 import fr.uga.ai.corridor.map.PlayerSquare;
 import fr.uga.ai.corridor.map.WallSquare;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Player {
 
     public final static Player PLAYER_ONE = new Player(1, "O", new Coordinates(0, 4), 8);

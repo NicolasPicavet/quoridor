@@ -15,6 +15,12 @@ public class Main {
         Map map = Map.getInstance();
 
         println(" ---- Corridor ----");
+        println("Try to move to the opposite side of the checkerboard");
+        println("Use commands to move or build a wall, you can build a maximum of 10 wall");
+        println("Command examples");
+        println("Build a vertical wall in column b line 3 : b3v");
+        println("Move to column H line 7 : H7");
+        println("");
 
         while(game) {
             println(map.draw(playingPlayer));
@@ -22,16 +28,17 @@ public class Main {
             actionSuccess = playingPlayer.execute(readAction());
 
             if (actionSuccess)
-                // win
                 if (playingPlayer.hasWin()) {
+                    // win
                     game = false;
                     win = true;
-                // change playing player
-                } else
+                } else {
+                    // change playing player
                     if (playingPlayer == Player.PLAYER_ONE)
                         playingPlayer = Player.PLAYER_TWO;
                     else
                         playingPlayer = Player.PLAYER_ONE;
+                }
         }
         if (win)
             println("Player " + playingPlayer.toString() + " has won !");

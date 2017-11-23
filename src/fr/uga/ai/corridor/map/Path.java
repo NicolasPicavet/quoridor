@@ -1,10 +1,7 @@
 package fr.uga.ai.corridor.map;
 
-import fr.uga.ai.corridor.map.PlayerSquare;
-import fr.uga.ai.corridor.map.WallSquare;
-import fr.uga.ai.corridor.map.WallSquareSide;
-
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Path {
 
