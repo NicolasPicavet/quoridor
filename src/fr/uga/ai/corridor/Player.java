@@ -2,7 +2,11 @@ package fr.uga.ai.corridor;
 
 import fr.uga.ai.corridor.map.Coordinates;
 import fr.uga.ai.corridor.map.Map;
+import fr.uga.ai.corridor.map.PlayerSquare;
 import fr.uga.ai.corridor.map.WallSquare;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Player {
 
@@ -56,17 +60,22 @@ public class Player {
         return coordinates;
     }
 
-    private boolean setCoordinates(Coordinates coordinates) {
+    private boolean setCoordinates(Coordinates newCoordinates) {
+        if (newCoordinates == null)
+            return false;
+        PlayerSquare from = Map.getInstance().getPlayerSquareFromCoordinates(this.coordinates);
+        PlayerSquare to = Map.getInstance().getPlayerSquareFromCoordinates(newCoordinates);
         boolean removed = false;
         boolean added = false;
-        boolean validMove = coordinates.x == this.coordinates.x && (coordinates.y == this.coordinates.y - 1 || coordinates.y == this.coordinates.y + 1)
-                || coordinates.y == this.coordinates.y && (coordinates.x == this.coordinates.x - 1 || coordinates.x == this.coordinates.x + 1);
-        if (validMove) {
+        boolean pathClear = !from.hasWallWith(to);
+        if (pathClear) {
             removed = Map.getInstance().removePlayer(this);
-            this.coordinates = coordinates;
+            this.coordinates = newCoordinates;
             added = Map.getInstance().addPlayer(this);
         }
-        return (coordinates == null || removed) && added && validMove;
+        if (removed != added)
+            throw new RuntimeException("!!! remove != added");
+        return removed && added && pathClear;
     }
 
     public int getWallBank() {

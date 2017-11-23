@@ -2,10 +2,6 @@ package fr.uga.ai.corridor.map;
 
 public class WallSquareSide {
 
-    public enum Side {
-        LEFT, TOP, RIGHT, BOTTOM;
-    }
-
     private boolean wall;
 
     public WallSquareSide() {

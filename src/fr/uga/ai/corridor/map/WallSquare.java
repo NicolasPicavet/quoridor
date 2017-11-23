@@ -1,6 +1,6 @@
 package fr.uga.ai.corridor.map;
 
-import java.util.HashMap;
+import java.util.*;
 import java.util.Map;
 
 public class WallSquare {
@@ -14,14 +14,14 @@ public class WallSquare {
 
     State state;
 
-    public Map<WallSquareSide.Side, WallSquareSide> sides = new HashMap<>();
+    public Map<Side, WallSquareSide> sides = new HashMap<>();
 
     public WallSquare(WallSquareSide left, WallSquareSide top, WallSquareSide right, WallSquareSide bottom) {
         this.state = State.NONE;
-        sides.put(WallSquareSide.Side.LEFT, left);
-        sides.put(WallSquareSide.Side.TOP, top);
-        sides.put(WallSquareSide.Side.RIGHT, right);
-        sides.put(WallSquareSide.Side.BOTTOM, bottom);
+        sides.put(Side.LEFT, left);
+        sides.put(Side.TOP, top);
+        sides.put(Side.RIGHT, right);
+        sides.put(Side.BOTTOM, bottom);
     }
 
     public boolean build(State state) {
@@ -32,21 +32,33 @@ public class WallSquare {
         return false;
     }
 
+    public WallSquareSide getIntersectSides(WallSquare wallSquare) {
+        Set<WallSquareSide> intersection = new HashSet<>();
+        for (Map.Entry<Side, WallSquareSide> entry : sides.entrySet())
+            intersection.add(entry.getValue());
+        Set<WallSquareSide> wallSquareSides = new HashSet<>();
+        for (Map.Entry<Side, WallSquareSide> entry : wallSquare.sides.entrySet())
+            wallSquareSides.add(entry.getValue());
+        intersection.retainAll(wallSquareSides);
+        Iterator<WallSquareSide> iterator = intersection.iterator();
+        return iterator.next();
+    }
+
     private boolean setHorizontal() {
-        if (sides.get(WallSquareSide.Side.LEFT).hasWall() || sides.get(WallSquareSide.Side.RIGHT).hasWall())
+        if (sides.get(Side.LEFT).hasWall() || sides.get(Side.RIGHT).hasWall())
             return false;
         state = isVertical() ? State.BOTH : State.HORIZONTAL;
-        sides.get(WallSquareSide.Side.LEFT).setWall(true);
-        sides.get(WallSquareSide.Side.RIGHT).setWall(true);
+        sides.get(Side.LEFT).setWall(true);
+        sides.get(Side.RIGHT).setWall(true);
         return true;
     }
 
     private boolean setVertical() {
-        if (sides.get(WallSquareSide.Side.TOP).hasWall() || sides.get(WallSquareSide.Side.BOTTOM).hasWall())
+        if (sides.get(Side.TOP).hasWall() || sides.get(Side.BOTTOM).hasWall())
             return false;
         state = isHorizontal() ? State.BOTH : State.VERTICAL;
-        sides.get(WallSquareSide.Side.TOP).setWall(true);
-        sides.get(WallSquareSide.Side.BOTTOM).setWall(true);
+        sides.get(Side.TOP).setWall(true);
+        sides.get(Side.BOTTOM).setWall(true);
         return true;
     }
 
@@ -68,7 +80,7 @@ public class WallSquare {
         return "";
     }
 
-    public String toString(WallSquareSide.Side askedSide) {
+    public String toString(Side askedSide) {
         return sides.get(askedSide).hasWall() ? wallCharacter : noWallCharacter;
     }
 }
