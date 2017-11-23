@@ -16,15 +16,14 @@ public class IO {
         while (true) {
             try {
                 String read = br.readLine();
-                boolean moveAction = false;
-                int x;
                 String firstChar = read.substring(0, 1);
+                int x;
                 int y = Integer.valueOf(read.substring(1, 2));
                 if (Map.PLAYER_MAP_LABELS.contains(firstChar)) {
                     // move player
                     x = Map.PLAYER_MAP_LABELS.indexOf(firstChar);
                     return new Action(Action.Type.MOVE, new Coordinates(x, y));
-                } else {
+                } else if (Map.WALL_MAP_LABELS.contains(firstChar)){
                     // build wall
                     x = Map.WALL_MAP_LABELS.indexOf(firstChar);
                     String thirdChar = read.substring(2, 3);
