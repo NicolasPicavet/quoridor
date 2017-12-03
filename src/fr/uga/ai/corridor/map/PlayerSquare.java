@@ -30,13 +30,13 @@ public class PlayerSquare {
         // if we reach destination return the set of PlayerSquare leading here
         if (this == destination)
             return origin;
-        // do the search for each side of the square
+        // do the searchContinuousWall for each side of the square
         Set<PlayerSquare> next = new HashSet<>();
         for (Side side : Side.values()) {
             // check that there is no wall between this Square and the next
             if (!hasWallWith(neighbours.get(side))) {
                 next = neighbours.get(side).findPath(origin, destination);
-                // if the search return something else than null it mean it has reach destination
+                // if the searchContinuousWall return something else than null it mean it has reach destination
                 if (next != null)
                     return next;
             }

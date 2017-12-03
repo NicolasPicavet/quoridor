@@ -12,22 +12,22 @@ public class WallSquare {
     public final static String wallCharacter = "|";
     public final static String noWallCharacter = " ";
 
-    State state;
+    private State state;
 
     public Map<Side, WallSquareSide> sides = new HashMap<>();
 
     public WallSquare(WallSquareSide left, WallSquareSide top, WallSquareSide right, WallSquareSide bottom) {
         this.state = State.NONE;
-        sides.put(Side.LEFT, left);
-        sides.put(Side.TOP, top);
-        sides.put(Side.RIGHT, right);
-        sides.put(Side.BOTTOM, bottom);
+        addSide(Side.LEFT, left);
+        addSide(Side.TOP, top);
+        addSide(Side.RIGHT, right);
+        addSide(Side.BOTTOM, bottom);
     }
 
     public boolean build(State state) {
-        if (state == State.VERTICAL)
+        if (state == State.VERTICAL && isWallValid(Side.TOP, Side.BOTTOM))
             return setVertical();
-        if (state == State.HORIZONTAL)
+        if (state == State.HORIZONTAL && isWallValid(Side.LEFT, Side.RIGHT))
             return setHorizontal();
         return false;
     }
@@ -82,5 +82,67 @@ public class WallSquare {
 
     public String toString(Side askedSide) {
         return sides.get(askedSide).hasWall() ? wallCharacter : noWallCharacter;
+    }
+
+    public Set<WallSquareSide> searchContinuousWall(WallSquare start, WallSquareSide origin) {
+        if (this == start)
+            throw new LoopWallException();
+        Set<WallSquareSide> travel = new HashSet<>();
+        for (Map.Entry<Side, WallSquareSide> entry: sides.entrySet()) {
+            if (entry.getValue() != origin)
+                travel.addAll(entry.getValue().searchContinuousWall(start,this));
+        }
+        return travel;
+    }
+
+    private boolean doesWallReachEdge(WallSquare origin) {
+        boolean reachEdge = false;
+        for (Map.Entry<Side, WallSquareSide> entry : sides.entrySet()) {
+            if (reachEdge)
+                return true;
+            WallSquare secondOwner = entry.getValue().getSecondOwner(this);
+            if (entry.getValue().hasWall() && secondOwner == null)
+                return true;
+            if (entry.getValue().hasWall() && secondOwner != origin)
+                reachEdge |= secondOwner.doesWallReachEdge(this);
+        }
+        return reachEdge;
+    }
+
+    private boolean isWallValid(Side sideOne, Side sideTwo) {
+        // search for edge to edge wall
+        Map<Side, Boolean> reachEdges = new HashMap<>();
+        int occurrence = 0;
+        for (Side s : Side.values()) {
+            if (sides.get(s).hasWall() || s == sideOne || s == sideTwo) {
+                WallSquare sideSecondOwner = sides.get(s).getSecondOwner(this);
+                reachEdges.put(s, sideSecondOwner == null || sideSecondOwner.doesWallReachEdge(this));
+            }
+        }
+        for (Map.Entry<Side, Boolean> entry : reachEdges.entrySet())
+            if (entry.getValue())
+                occurrence ++;
+        if (occurrence >= 2)
+            return false;
+        // search for continuous wall
+        WallSquare sideOneSecondOwner = sides.get(sideOne).getSecondOwner(this);
+        WallSquare sideTwoSecondOwner = sides.get(sideTwo).getSecondOwner(this);
+        if (sideOneSecondOwner != null && sideTwoSecondOwner != null) {
+            try {
+                Set<WallSquareSide> firstSearch = sideOneSecondOwner.searchContinuousWall(this, sides.get(sideOne));
+                Set<WallSquareSide> secondSearch = sideTwoSecondOwner.searchContinuousWall(this, sides.get(sideTwo));
+                firstSearch.retainAll(secondSearch);
+                if (firstSearch.size() > 0)
+                    return false;
+            } catch (LoopWallException e) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void addSide(Side side, WallSquareSide wallSquareSide) {
+        wallSquareSide.addOwner(this);
+        sides.put(side, wallSquareSide);
     }
 }

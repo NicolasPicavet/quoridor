@@ -83,7 +83,7 @@ public class Map {
 
     public boolean searchOpenPath(Coordinates from, Coordinates to) {
         IO.println("from " + from.x + from.y + " to " + to.x + to.y);
-        // create a new Path Object from the recursive search and return its openness
+        // create a new Path Object from the recursive searchContinuousWall and return its openness
         return new Path(playerMap[from.x][from.y].findPath(new HashSet<>(), playerMap[to.x][to.y])).isOpen();
     }
 

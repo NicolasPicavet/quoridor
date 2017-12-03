@@ -16,7 +16,8 @@ public class Main {
 
         println(" ---- Corridor ----");
         println("Try to move to the opposite side of the checkerboard");
-        println("Use commands to move or build a wall, you can build a maximum of 10 wall");
+        println("Use commands to move or build a wall");
+        println("You can build a maximum of 10 walls");
         println("Command examples");
         println("Build a vertical wall in column b line 3 : b3v");
         println("Move to column H line 7 : H7");
