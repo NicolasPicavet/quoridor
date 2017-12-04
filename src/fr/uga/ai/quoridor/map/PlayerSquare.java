@@ -43,8 +43,9 @@ public class PlayerSquare {
     }
 
     public boolean hasWallWith(PlayerSquare playerSquare) {
+        // if not neighbour return "has wall"
         if (!isNeighbourOf(playerSquare))
-            return false;
+            return true;
         // get intersected walls
         Set<WallSquare> intersectWalls = new HashSet<>(neighbourWalls);
         intersectWalls.retainAll(playerSquare.neighbourWalls);
