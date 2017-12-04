@@ -64,20 +64,24 @@ public abstract class Player {
     }
 
     public boolean execute(Action action) {
-        // TODO test action before executing
+        // TODO jump over player
+        if (!action.isValid(this))
+            return false;
         // move
-        if (action.getType() == Action.Type.MOVE)
+        if (action.getType().isMove())
             return setCoordinates(action.getCoordinates());
         // build wall
-        boolean built = false;
-        if (wallBank > 0) {
-            if (action.getType() == Action.Type.BUILD_HORIZONTAL)
-                built = Map.getInstance().buildWall(action.getCoordinates(), WallSquare.State.HORIZONTAL);
-            else if (action.getType() == Action.Type.BUILD_VERTICAL)
-                built =  Map.getInstance().buildWall(action.getCoordinates(), WallSquare.State.VERTICAL);
-            if (built)
-                wallBank--;
-            return built;
+        if (action.getType().isBuild()) {
+            boolean built = false;
+            if (wallBank > 0) {
+                if (action.getType() == Action.Type.BUILD_HORIZONTAL)
+                    built = Map.getInstance().buildWall(action.getCoordinates(), WallSquare.State.HORIZONTAL);
+                else if (action.getType() == Action.Type.BUILD_VERTICAL)
+                    built =  Map.getInstance().buildWall(action.getCoordinates(), WallSquare.State.VERTICAL);
+                if (built)
+                    wallBank--;
+                return built;
+            }
         }
         return false;
     }

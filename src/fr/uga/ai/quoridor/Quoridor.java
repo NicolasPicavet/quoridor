@@ -2,12 +2,13 @@ package fr.uga.ai.quoridor;
 
 import fr.uga.ai.quoridor.map.Map;
 import fr.uga.ai.quoridor.player.Human;
+import fr.uga.ai.quoridor.player.Player;
 import fr.uga.ai.quoridor.player.ai.GoToSmallestManhattanDistance;
 import fr.uga.ai.quoridor.player.ai.IsArtificial;
-import fr.uga.ai.quoridor.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static fr.uga.ai.quoridor.IO.println;
 import static fr.uga.ai.quoridor.IO.readAction;
@@ -55,8 +56,14 @@ public class Quoridor {
         while(game) {
             println(map.draw(playingPlayer));
 
-            if (playingPlayer instanceof IsArtificial)
+            if (playingPlayer instanceof IsArtificial) {
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 actionSuccess = playingPlayer.execute(playingPlayer.evaluate());
+            }
             else
                 actionSuccess = playingPlayer.execute(readAction());
 

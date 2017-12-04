@@ -1,5 +1,6 @@
 package fr.uga.ai.quoridor.player.ai;
 
+import fr.uga.ai.quoridor.IO;
 import fr.uga.ai.quoridor.map.Coordinates;
 import fr.uga.ai.quoridor.map.Map;
 import fr.uga.ai.quoridor.map.PlayerSquare;
@@ -7,9 +8,9 @@ import fr.uga.ai.quoridor.map.Side;
 import fr.uga.ai.quoridor.player.Action;
 import fr.uga.ai.quoridor.player.Player;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class GoToSmallestManhattanDistance extends Player implements IsArtificial {
 
@@ -22,6 +23,7 @@ public class GoToSmallestManhattanDistance extends Player implements IsArtificia
 
     @Override
     public Action evaluate() {
+        Action action = null;
         // calculate Manhattan distance to win possibilities, and take the smallest one
         PlayerSquare closestPossibility = null;
         int smallestManhattanDistance = Integer.MAX_VALUE;
@@ -33,24 +35,27 @@ public class GoToSmallestManhattanDistance extends Player implements IsArtificia
                 smallestManhattanDistance = manhattanDistance;
             }
         }
-        // determine best coordinates to go to
-        smallestManhattanDistance = Integer.MAX_VALUE;
-        Coordinates bestCoordinates = null;
-        List<Coordinates> sortedMovePossibilities = new ArrayList<>();
+        // sort coordinates to go to by priority
+        java.util.Map<Integer, Coordinates> movePossibilities = new TreeMap<>();
         for (java.util.Map.Entry<Side, PlayerSquare> entry : actualPosition.getNeighbours().entrySet()) {
             if (entry.getValue() != null) {
-                //sortedMovePossibilities.add();
                 int manhattanDistance = Map.getInstance().getManhattanDistance(entry.getValue(), closestPossibility);
-                if (smallestManhattanDistance > manhattanDistance) {
-                    bestCoordinates = entry.getValue().getCoordinates();
-                    smallestManhattanDistance = manhattanDistance;
+                while (movePossibilities.containsKey(manhattanDistance)) {
+                    manhattanDistance++;
                 }
+                movePossibilities.put(manhattanDistance, entry.getValue().getCoordinates());
             }
         }
-        // TODO create a List with potential destinations by priority
-        // TODO test move action in order of priority
-        // TODO execute the first valid one
-        // create a move action
-        return new Action(Action.Type.MOVE, bestCoordinates);
+        // test move action in order of priority
+        Iterator i = movePossibilities.entrySet().iterator();
+        while (i.hasNext()) {
+            java.util.Map.Entry<Integer, Coordinates> entry = (java.util.Map.Entry) i.next();
+            IO.println(entry.getKey() + "");
+            action = new Action(Action.Type.MOVE, entry.getValue());
+            if (action.isValid(this))
+                break;
+        }
+        // return the best move action
+        return action;
     }
 }

@@ -24,10 +24,20 @@ public class WallSquare {
         addSide(Side.BOTTOM, bottom);
     }
 
-    public boolean build(State state) {
+    public boolean isBuildable(State state) {
         if (state == State.VERTICAL && isWallValid(Side.TOP, Side.BOTTOM))
-            return setVertical();
+            if (!sides.get(Side.TOP).hasWall() && !sides.get(Side.BOTTOM).hasWall())
+                return true;
         if (state == State.HORIZONTAL && isWallValid(Side.LEFT, Side.RIGHT))
+            if (!sides.get(Side.LEFT).hasWall() && !sides.get(Side.RIGHT).hasWall())
+                return true;
+        return false;
+    }
+
+    public boolean build(State state) {
+        if (state == State.VERTICAL && isBuildable(state))
+            return setVertical();
+        if (state == State.HORIZONTAL && isBuildable(state))
             return setHorizontal();
         return false;
     }
@@ -45,8 +55,6 @@ public class WallSquare {
     }
 
     private boolean setHorizontal() {
-        if (sides.get(Side.LEFT).hasWall() || sides.get(Side.RIGHT).hasWall())
-            return false;
         state = isVertical() ? State.BOTH : State.HORIZONTAL;
         sides.get(Side.LEFT).setWall(true);
         sides.get(Side.RIGHT).setWall(true);
@@ -54,8 +62,6 @@ public class WallSquare {
     }
 
     private boolean setVertical() {
-        if (sides.get(Side.TOP).hasWall() || sides.get(Side.BOTTOM).hasWall())
-            return false;
         state = isHorizontal() ? State.BOTH : State.VERTICAL;
         sides.get(Side.TOP).setWall(true);
         sides.get(Side.BOTTOM).setWall(true);
@@ -68,10 +74,6 @@ public class WallSquare {
 
     public boolean isVertical() {
         return state == State.VERTICAL || state == State.BOTH;
-    }
-
-    public boolean hasWall() {
-        return state != State.NONE;
     }
 
     @Override

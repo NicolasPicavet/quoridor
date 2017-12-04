@@ -1,7 +1,7 @@
 package fr.uga.ai.quoridor.map;
 
-import fr.uga.ai.quoridor.Quoridor;
 import fr.uga.ai.quoridor.IO;
+import fr.uga.ai.quoridor.Quoridor;
 import fr.uga.ai.quoridor.player.Player;
 
 import java.util.HashMap;
@@ -162,6 +162,10 @@ public class Map {
 
     public PlayerSquare getPlayerSquareFromCoordinates(Coordinates coordinates) {
         return playerMap[coordinates.x][coordinates.y];
+    }
+
+    public WallSquare getWallSquareFromCoordinates(Coordinates coordinates) {
+        return wallMap[coordinates.x][coordinates.y];
     }
 
     public Set<PlayerSquare> getWinPossibilities(int winX) {
