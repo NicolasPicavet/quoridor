@@ -2,7 +2,6 @@ package fr.uga.ai.quoridor.player;
 
 import fr.uga.ai.quoridor.map.Coordinates;
 import fr.uga.ai.quoridor.map.Map;
-import fr.uga.ai.quoridor.map.PlayerSquare;
 import fr.uga.ai.quoridor.map.WallSquare;
 
 import java.lang.reflect.Constructor;
@@ -64,7 +63,6 @@ public abstract class Player {
     }
 
     public boolean execute(Action action) {
-        // TODO jump over player
         if (!action.isValid(this))
             return false;
         // move
@@ -90,22 +88,17 @@ public abstract class Player {
         return coordinates;
     }
 
-    protected boolean setCoordinates(Coordinates newCoordinates) {
-        if (newCoordinates == null)
-            return false;
-        PlayerSquare from = Map.getInstance().getPlayerSquareFromCoordinates(this.coordinates);
-        PlayerSquare to = Map.getInstance().getPlayerSquareFromCoordinates(newCoordinates);
-        boolean removed = false;
-        boolean added = false;
-        boolean pathClear = !from.hasWallWith(to);
-        if (pathClear) {
-            removed = Map.getInstance().removePlayer(this);
-            this.coordinates = newCoordinates;
-            added = Map.getInstance().addPlayer(this);
-        }
+    protected boolean setCoordinates(Coordinates destinationCoordinates) {
+        //IO.println("source: " + coordinates.x + " " + coordinates.y + ", destination: " + destinationCoordinates.x + " " + destinationCoordinates.y);
+        // remove player from map
+        boolean removed = Map.getInstance().removePlayer(this);
+        // change position
+        this.coordinates = destinationCoordinates;
+        // add player to map
+        boolean added = Map.getInstance().addPlayer(this);
         if (removed != added)
-            throw new RuntimeException("!!! remove != added");
-        return removed && added && pathClear;
+            throw new RuntimeException("!!! remove != added : " + removed + " " + added);
+        return removed && added;
     }
 
     public Action evaluate() {

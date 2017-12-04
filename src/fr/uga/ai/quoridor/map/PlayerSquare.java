@@ -80,8 +80,26 @@ public class PlayerSquare {
     }
 
     public Set<PlayerSquare> getMovePossibilities() {
-        //TODO return move possibilities
-        return null;
+        Set<PlayerSquare> possibilities = new HashSet<>();
+        for (Map.Entry<Side, PlayerSquare> e : getNeighbours().entrySet()) {
+            if (e.getValue() != null) {
+                // has a player
+                if (!e.getValue().isEmpty()) {
+                    // can jump over
+                    if (!e.getValue().hasWallWith(e.getValue().getNeighbours().get(e.getKey())))
+                        possibilities.add(e.getValue().getNeighbours().get(e.getKey()));
+                    // can jump but not over
+                    else
+                        for (Map.Entry<Side,PlayerSquare> jumpNeighbour : e.getValue().getNeighbours().entrySet())
+                            if (jumpNeighbour.getKey() != e.getKey() && jumpNeighbour.getValue() != this)
+                                possibilities.add(jumpNeighbour.getValue());
+                }
+                // has no wall
+                if (!this.hasWallWith(e.getValue()))
+                    possibilities.add(e.getValue());
+            }
+        }
+        return possibilities;
     }
 
     public void removePlayer() {

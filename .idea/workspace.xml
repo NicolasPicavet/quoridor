@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4d0535c-62af-4792-9b30-6a2612d61dc7" name="Default" comment="- validate action before executing it&#10;-">
+    <list default="true" id="b4d0535c-62af-4792-9b30-6a2612d61dc7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java" />
@@ -29,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="181">
-      <file leaf-file-name="Quoridor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Quoridor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="60" column="46" lean-forward="true" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+            <state relative-caret-position="730">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,12 +74,12 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
+            <state relative-caret-position="271">
+              <caret line="99" column="33" lean-forward="true" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2934#2935#0" expanded="true" />
-                <element signature="e#2968#2969#0" expanded="true" />
+                <element signature="e#2931#2932#0" expanded="true" />
+                <element signature="e#2965#2966#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,8 +88,8 @@
       <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="280">
+              <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#328#329#0" expanded="true" />
@@ -106,8 +104,8 @@
       <file leaf-file-name="GoToSmallestManhattanDistance.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="39" column="81" lean-forward="true" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="81" />
+            <state relative-caret-position="169">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,8 +116,8 @@
       <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+            <state relative-caret-position="203">
+              <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,16 +135,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerSquare.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerSquare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="82" column="40" lean-forward="false" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+            <state relative-caret-position="118">
+              <caret line="83" column="31" lean-forward="true" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
               <folding>
-                <element signature="e#2873#2874#0" expanded="true" />
-                <element signature="e#2906#2907#0" expanded="true" />
-                <element signature="e#3407#3408#0" expanded="true" />
-                <element signature="e#3468#3469#0" expanded="true" />
+                <element signature="e#2818#2819#0" expanded="true" />
+                <element signature="e#2851#2852#0" expanded="true" />
+                <element signature="e#4345#4346#0" expanded="true" />
+                <element signature="e#4406#4407#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,6 +168,7 @@
       <find>Side.Side</find>
       <find>SortedSet</find>
       <find>private</find>
+      <find>IO.println</find>
     </findStrings>
     <replaceStrings>
       <replace>Square</replace>
@@ -232,13 +231,13 @@
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/player/Player.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/player/ai/GoToSmallestManhattanDistance.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/IO.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" />
       </list>
     </option>
   </component>
@@ -496,7 +495,7 @@
       <workItem from="1512305954480" duration="9307000" />
       <workItem from="1512340266489" duration="7445000" />
       <workItem from="1512380548028" duration="2111000" />
-      <workItem from="1512394408512" duration="7016000" />
+      <workItem from="1512394408512" duration="10639000" />
     </task>
     <task id="LOCAL-00001" summary="first functional version&#10;(bad rules)">
       <created>1509956679518</created>
@@ -624,11 +623,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512396392990</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- validate action before executing it&#10;- finish GoToSmallestManhattanDistance&#10;- add 1 second pause during artificial player turn">
+      <created>1512405117757</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1512405117757</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106780000" />
+    <option name="totallyTimeSpent" value="110403000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,7 +663,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18976545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6218852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34019503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -697,7 +703,8 @@
     <MESSAGE value="rename to Quoridor" />
     <MESSAGE value="- fix artifact build&#10;- add index out of bound exception to loop on input" />
     <MESSAGE value="fix move action tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix move action tests" />
+    <MESSAGE value="- validate action before executing it&#10;- finish GoToSmallestManhattanDistance&#10;- add 1 second pause during artificial player turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="- validate action before executing it&#10;- finish GoToSmallestManhattanDistance&#10;- add 1 second pause during artificial player turn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,16 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="60" column="46" lean-forward="true" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -848,30 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="39" column="81" lean-forward="true" selection-start-line="39" selection-start-column="81" selection-end-line="39" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="280">
+          <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#328#329#0" expanded="true" />
@@ -882,27 +859,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
+        <state relative-caret-position="118">
+          <caret line="83" column="31" lean-forward="true" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2934#2935#0" expanded="true" />
-            <element signature="e#2968#2969#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2851#2852#0" expanded="true" />
+            <element signature="e#4345#4346#0" expanded="true" />
+            <element signature="e#4406#4407#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="82" column="40" lean-forward="false" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+        <state relative-caret-position="169">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#2873#2874#0" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#3407#3408#0" expanded="true" />
-            <element signature="e#3468#3469#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="99" column="33" lean-forward="true" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#2965#2966#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

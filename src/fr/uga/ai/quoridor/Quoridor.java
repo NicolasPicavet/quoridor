@@ -83,6 +83,8 @@ public class Quoridor {
         if (win)
             println("Player " + playingPlayer.toString() + " has won !");
 
+        println(map.draw(playingPlayer));
+
         println("--- / ---");
     }
 }

@@ -1,16 +1,14 @@
 package fr.uga.ai.quoridor.player.ai;
 
-import fr.uga.ai.quoridor.IO;
 import fr.uga.ai.quoridor.map.Coordinates;
 import fr.uga.ai.quoridor.map.Map;
 import fr.uga.ai.quoridor.map.PlayerSquare;
-import fr.uga.ai.quoridor.map.Side;
 import fr.uga.ai.quoridor.player.Action;
 import fr.uga.ai.quoridor.player.Player;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.TreeMap;
 
 public class GoToSmallestManhattanDistance extends Player implements IsArtificial {
 
@@ -36,21 +34,20 @@ public class GoToSmallestManhattanDistance extends Player implements IsArtificia
             }
         }
         // sort coordinates to go to by priority
-        java.util.Map<Integer, Coordinates> movePossibilities = new TreeMap<>();
-        for (java.util.Map.Entry<Side, PlayerSquare> entry : actualPosition.getNeighbours().entrySet()) {
-            if (entry.getValue() != null) {
-                int manhattanDistance = Map.getInstance().getManhattanDistance(entry.getValue(), closestPossibility);
+        java.util.Map<Integer, Coordinates> movePossibilities = new HashMap<>();
+        for (PlayerSquare playerSquare : actualPosition.getMovePossibilities()) {
+            if (playerSquare != null) {
+                int manhattanDistance = Map.getInstance().getManhattanDistance(playerSquare, closestPossibility);
                 while (movePossibilities.containsKey(manhattanDistance)) {
                     manhattanDistance++;
                 }
-                movePossibilities.put(manhattanDistance, entry.getValue().getCoordinates());
+                movePossibilities.put(manhattanDistance, playerSquare.getCoordinates());
             }
         }
         // test move action in order of priority
         Iterator i = movePossibilities.entrySet().iterator();
         while (i.hasNext()) {
             java.util.Map.Entry<Integer, Coordinates> entry = (java.util.Map.Entry) i.next();
-            IO.println(entry.getKey() + "");
             action = new Action(Action.Type.MOVE, entry.getValue());
             if (action.isValid(this))
                 break;

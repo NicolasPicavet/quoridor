@@ -30,13 +30,9 @@ public class Action {
     public boolean isValid(Player player) {
         // test if destination is a neighbour and has no obstacle
         if (type.isMove()) {
-            //TODO jump over player
             PlayerSquare from = Map.getInstance().getPlayerSquareFromCoordinates(player.getCoordinates());
             PlayerSquare to = Map.getInstance().getPlayerSquareFromCoordinates(this.coordinates);
-            boolean isNeighbour = from.isNeighbourOf(to);
-            boolean hasWall = from.hasWallWith(to);
-            boolean isFree = to.isEmpty();
-            return isNeighbour && !hasWall && isFree;
+            return from.getMovePossibilities().contains(to);
         } else if (type.isBuild()) {
             if (player.getWallBank() > 0) {
                 if (type == Action.Type.BUILD_HORIZONTAL)
