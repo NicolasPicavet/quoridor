@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Corridor.iml" filepath="$PROJECT_DIR$/Corridor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Quoridor.iml" filepath="$PROJECT_DIR$/Quoridor.iml" />
     </modules>
   </component>
 </project>

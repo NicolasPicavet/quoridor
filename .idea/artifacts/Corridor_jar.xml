@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Corridor:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Corridor_jar</output-path>
-    <root id="archive" name="Corridor.jar">
-      <element id="module-output" name="Corridor" />
-    </root>
-  </artifact>
-</component>

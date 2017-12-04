@@ -37,6 +37,8 @@ public class IO {
                 // do nothing
             } catch (NumberFormatException e) {
                 // do nothing
+            } catch (IndexOutOfBoundsException e) {
+                // do nothing
             }
         }
     }
@@ -50,6 +52,8 @@ public class IO {
             } catch (IOException e) {
                 // do nothing
             } catch (NumberFormatException e) {
+                // do nothing
+            } catch (IndexOutOfBoundsException e) {
                 // do nothing
             }
         }
