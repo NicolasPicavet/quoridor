@@ -1,23 +1,23 @@
-package fr.uga.ai.corridor;
+package fr.uga.ai.corridor.player;
 
 import fr.uga.ai.corridor.map.Coordinates;
 import fr.uga.ai.corridor.map.Map;
 import fr.uga.ai.corridor.map.PlayerSquare;
 import fr.uga.ai.corridor.map.WallSquare;
 
-public class Player {
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
-    public final static Player PLAYER_ONE = new Player(1, "O", new Coordinates(0, 4), 8);
-    public final static Player PLAYER_TWO = new Player(2, "X", new Coordinates(8, 4), 0);
+public abstract class Player {
 
-    private final int playerId;
-    private final String character;
-    private final int winX;
+    protected final int playerId;
+    protected final String character;
+    protected final int winX;
 
-    private Coordinates coordinates;
-    private int wallBank = 10;
+    protected Coordinates coordinates;
+    protected int wallBank = 10;
 
-    private Player(int playerId, String character, Coordinates initialPosition, int winX) {
+    public Player(int playerId, String character, Coordinates initialPosition, int winX) {
         this.playerId = playerId;
         this.character = character;
         this.coordinates = initialPosition;
@@ -26,9 +26,37 @@ public class Player {
         Map.getInstance().addPlayer(this);
     }
 
+    private static Player initPlayer(Class<? extends Player> T, int playerId, String character, Coordinates initialPosition, int winX) {
+        try {
+            Constructor<? extends Player> constructor = T.getConstructor(Integer.class, String.class, Coordinates.class, Integer.class);
+            return constructor.newInstance(playerId, character, initialPosition, winX);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Player initPlayerOne(Class<? extends Player> T) {
+        return initPlayer(T, 1, "O", new Coordinates(0, 4), 8);
+    }
+
+    public static Player initPlayerTwo(Class<? extends Player> T) {
+        return initPlayer(T, 2, "X", new Coordinates(8, 4), 0);
+    }
+
     @Override
     public String toString() {
         return character;
+    }
+
+    public int getWallBank() {
+        return wallBank;
     }
 
     public boolean hasWin() {
@@ -36,6 +64,7 @@ public class Player {
     }
 
     public boolean execute(Action action) {
+        // TODO test action before executing
         // move
         if (action.getType() == Action.Type.MOVE)
             return setCoordinates(action.getCoordinates());
@@ -57,7 +86,7 @@ public class Player {
         return coordinates;
     }
 
-    private boolean setCoordinates(Coordinates newCoordinates) {
+    protected boolean setCoordinates(Coordinates newCoordinates) {
         if (newCoordinates == null)
             return false;
         PlayerSquare from = Map.getInstance().getPlayerSquareFromCoordinates(this.coordinates);
@@ -75,7 +104,8 @@ public class Player {
         return removed && added && pathClear;
     }
 
-    public int getWallBank() {
-        return wallBank;
+    public Action evaluate() {
+        // do nothing
+        return null;
     }
 }

@@ -1,4 +1,4 @@
-package fr.uga.ai.corridor;
+package fr.uga.ai.corridor.player;
 
 import fr.uga.ai.corridor.map.Coordinates;
 

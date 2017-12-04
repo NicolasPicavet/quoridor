@@ -2,10 +2,13 @@ package fr.uga.ai.corridor;
 
 import fr.uga.ai.corridor.map.Coordinates;
 import fr.uga.ai.corridor.map.Map;
+import fr.uga.ai.corridor.player.Action;
+import fr.uga.ai.corridor.player.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class IO {
 
@@ -32,6 +35,20 @@ public class IO {
                     else if (thirdChar.contains("v"))
                         return new Action(Action.Type.BUILD_VERTICAL, new Coordinates(x, y));
                 }
+            } catch (IOException e) {
+                // do nothing
+            } catch (NumberFormatException e) {
+                // do nothing
+            }
+        }
+    }
+
+    public static int readNumericChoice() {
+        // while input not well formed
+        while (true) {
+            try {
+                String read = br.readLine();
+                return Integer.valueOf(read.substring(0, 1));
             } catch (IOException e) {
                 // do nothing
             } catch (NumberFormatException e) {

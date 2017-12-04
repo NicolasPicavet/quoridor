@@ -1,7 +1,7 @@
 package fr.uga.ai.corridor.map;
 
 import fr.uga.ai.corridor.IO;
-import fr.uga.ai.corridor.Player;
+import fr.uga.ai.corridor.player.Player;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -21,7 +21,6 @@ public class PlayerSquare {
     }
 
     public Set<PlayerSquare> findPath(Set<PlayerSquare> origin, PlayerSquare destination) {
-        IO.println(coordinates.x + " " + coordinates.y);
         // if the set contains the current square its means we have done a loop
         if (origin.contains(this))
             return null;
@@ -71,12 +70,16 @@ public class PlayerSquare {
         this.neighbours = neighbours;
     }
 
-    public Player getPlayer() {
-        return player;
-    }
-
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public Map<Side, PlayerSquare> getNeighbours() {
+        return neighbours;
     }
 
     public void removePlayer() {
@@ -107,22 +110,6 @@ public class PlayerSquare {
                 return entry.getKey();
         }
         return null;
-    }
-
-    public boolean isLeft(PlayerSquare playerSquare) {
-        return this.coordinates.x < playerSquare.coordinates.x;
-    }
-
-    public boolean isAbove(PlayerSquare playerSquare) {
-        return this.coordinates.y < playerSquare.coordinates.y;
-    }
-
-    public boolean isRight(PlayerSquare playerSquare) {
-        return this.coordinates.x > playerSquare.coordinates.x;
-    }
-
-    public boolean isBelow(PlayerSquare playerSquare) {
-        return this.coordinates.y > playerSquare.coordinates.y;
     }
 
     @Override

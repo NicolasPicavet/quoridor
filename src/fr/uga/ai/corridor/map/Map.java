@@ -1,7 +1,8 @@
 package fr.uga.ai.corridor.map;
 
+import fr.uga.ai.corridor.Corridor;
 import fr.uga.ai.corridor.IO;
-import fr.uga.ai.corridor.Player;
+import fr.uga.ai.corridor.player.Player;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -153,14 +154,25 @@ public class Map {
         map += "|";
         // players wall bank
         map += " " +
-                Player.PLAYER_ONE.toString() + " " + Integer.toString(Player.PLAYER_ONE.getWallBank()) +
+                Corridor.playerOne.toString() + " " + Integer.toString(Corridor.playerOne.getWallBank()) +
                 " - " +
-                Player.PLAYER_TWO.toString() + " " + Integer.toString(Player.PLAYER_TWO.getWallBank()) + "\n";
+                Corridor.playerTwo.toString() + " " + Integer.toString(Corridor.playerTwo.getWallBank()) + "\n";
         return map;
     }
 
     public PlayerSquare getPlayerSquareFromCoordinates(Coordinates coordinates) {
         return playerMap[coordinates.x][coordinates.y];
+    }
+
+    public Set<PlayerSquare> getWinPossibilities(int winX) {
+        Set<PlayerSquare> possibilities = new HashSet<>();
+        for (int y = 0; y < PLAYER_MAP_SIZE; y++)
+            possibilities.add(playerMap[winX][y]);
+        return possibilities;
+    }
+
+    public int getManhattanDistance(PlayerSquare from, PlayerSquare to) {
+        return Math.abs(from.getCoordinates().x - to.getCoordinates().x) + Math.abs(from.getCoordinates().y - to.getCoordinates().y);
     }
 
     private PlayerSquare getNeighbour(Side side, Coordinates coordinates) {
