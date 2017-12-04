@@ -1,9 +1,9 @@
-package fr.uga.ai.corridor.player;
+package fr.uga.ai.quoridor.player;
 
-import fr.uga.ai.corridor.map.Coordinates;
-import fr.uga.ai.corridor.map.Map;
-import fr.uga.ai.corridor.map.PlayerSquare;
-import fr.uga.ai.corridor.map.WallSquare;
+import fr.uga.ai.quoridor.map.Coordinates;
+import fr.uga.ai.quoridor.map.Map;
+import fr.uga.ai.quoridor.map.PlayerSquare;
+import fr.uga.ai.quoridor.map.WallSquare;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

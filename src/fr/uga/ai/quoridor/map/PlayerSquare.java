@@ -1,7 +1,6 @@
-package fr.uga.ai.corridor.map;
+package fr.uga.ai.quoridor.map;
 
-import fr.uga.ai.corridor.IO;
-import fr.uga.ai.corridor.player.Player;
+import fr.uga.ai.quoridor.player.Player;
 
 import java.util.HashSet;
 import java.util.Iterator;

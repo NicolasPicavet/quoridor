@@ -1,18 +1,18 @@
-package fr.uga.ai.corridor;
+package fr.uga.ai.quoridor;
 
-import fr.uga.ai.corridor.map.Map;
-import fr.uga.ai.corridor.player.Human;
-import fr.uga.ai.corridor.player.ai.GoToSmallestManhattanDistance;
-import fr.uga.ai.corridor.player.ai.IsArtificial;
-import fr.uga.ai.corridor.player.Player;
+import fr.uga.ai.quoridor.map.Map;
+import fr.uga.ai.quoridor.player.Human;
+import fr.uga.ai.quoridor.player.ai.GoToSmallestManhattanDistance;
+import fr.uga.ai.quoridor.player.ai.IsArtificial;
+import fr.uga.ai.quoridor.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static fr.uga.ai.corridor.IO.println;
-import static fr.uga.ai.corridor.IO.readAction;
+import static fr.uga.ai.quoridor.IO.println;
+import static fr.uga.ai.quoridor.IO.readAction;
 
-public class Corridor {
+public class Quoridor {
 
     public static Player playerOne;
     public static Player playerTwo;
@@ -26,7 +26,7 @@ public class Corridor {
         Map map = Map.getInstance();
 
         // Introduction
-        println(" ---- Corridor ----");
+        println(" ---- Quoridor ----");
         println("Try to move to the opposite side of the checkerboard");
         println("Use commands to move or build a wall");
         println("You can build a maximum of 10 walls");

@@ -1,8 +1,8 @@
-package fr.uga.ai.corridor.map;
+package fr.uga.ai.quoridor.map;
 
-import fr.uga.ai.corridor.Corridor;
-import fr.uga.ai.corridor.IO;
-import fr.uga.ai.corridor.player.Player;
+import fr.uga.ai.quoridor.Quoridor;
+import fr.uga.ai.quoridor.IO;
+import fr.uga.ai.quoridor.player.Player;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -154,9 +154,9 @@ public class Map {
         map += "|";
         // players wall bank
         map += " " +
-                Corridor.playerOne.toString() + " " + Integer.toString(Corridor.playerOne.getWallBank()) +
+                Quoridor.playerOne.toString() + " " + Integer.toString(Quoridor.playerOne.getWallBank()) +
                 " - " +
-                Corridor.playerTwo.toString() + " " + Integer.toString(Corridor.playerTwo.getWallBank()) + "\n";
+                Quoridor.playerTwo.toString() + " " + Integer.toString(Quoridor.playerTwo.getWallBank()) + "\n";
         return map;
     }
 

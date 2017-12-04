@@ -1,14 +1,12 @@
-package fr.uga.ai.corridor;
+package fr.uga.ai.quoridor;
 
-import fr.uga.ai.corridor.map.Coordinates;
-import fr.uga.ai.corridor.map.Map;
-import fr.uga.ai.corridor.player.Action;
-import fr.uga.ai.corridor.player.Player;
+import fr.uga.ai.quoridor.map.Coordinates;
+import fr.uga.ai.quoridor.map.Map;
+import fr.uga.ai.quoridor.player.Action;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 
 public class IO {
 

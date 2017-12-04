@@ -1,6 +1,6 @@
-package fr.uga.ai.corridor.player;
+package fr.uga.ai.quoridor.player;
 
-import fr.uga.ai.corridor.map.Coordinates;
+import fr.uga.ai.quoridor.map.Coordinates;
 
 public class Action {
 

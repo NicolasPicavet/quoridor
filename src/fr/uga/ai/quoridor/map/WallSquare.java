@@ -1,4 +1,4 @@
-package fr.uga.ai.corridor.map;
+package fr.uga.ai.quoridor.map;
 
 import java.util.*;
 import java.util.Map;
