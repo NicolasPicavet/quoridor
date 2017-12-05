@@ -1,11 +1,13 @@
 package fr.uga.ai.quoridor;
 
+import fr.uga.ai.quoridor.gui.MapGui;
 import fr.uga.ai.quoridor.map.Map;
 import fr.uga.ai.quoridor.player.Human;
 import fr.uga.ai.quoridor.player.Player;
 import fr.uga.ai.quoridor.player.ai.GoToSmallestManhattanDistance;
 import fr.uga.ai.quoridor.player.ai.IsArtificial;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -19,6 +21,14 @@ public class Quoridor {
     public static Player playerTwo;
 
     public static void main(String[] args) {
+
+        // GUI
+        JFrame frame = new JFrame("Map");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setContentPane(MapGui.getInstance().getView());
+        frame.pack();
+        frame.setVisible(true);
+
 
         Player playingPlayer;
         boolean game = true;
@@ -81,7 +91,7 @@ public class Quoridor {
                 }
         }
         if (win)
-            println("Player " + playingPlayer.toString() + " has won !");
+            println("Player " + playingPlayer.toString() + " has won !\n");
 
         println(map.draw(playingPlayer));
 

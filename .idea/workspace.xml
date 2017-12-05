@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d0535c-62af-4792-9b30-6a2612d61dc7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/IsSquareWidget.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapCellRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/PlayerSquareWidget.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/WallSquareWidget.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/IsSquare.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" afterPath="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/" />
@@ -27,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="181">
-      <file leaf-file-name="Quoridor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Quoridor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="339">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,87 +47,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Human.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Human.java">
+      <file leaf-file-name="MapGui.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#814#815#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapCellRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapCellRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SquareWidget.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="89" lean-forward="false" selection-start-line="5" selection-start-column="89" selection-end-line="5" selection-end-column="89" />
-              <folding />
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#167#168#0" expanded="true" />
+                <element signature="e#194#195#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsArtificial.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/IsArtificial.java">
+      <file leaf-file-name="IsSquare.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/IsSquare.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/IO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="99" column="33" lean-forward="true" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2931#2932#0" expanded="true" />
-                <element signature="e#2965#2966#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#328#329#0" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoToSmallestManhattanDistance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+            <state relative-caret-position="254">
+              <caret line="170" column="63" lean-forward="false" selection-start-line="170" selection-start-column="63" selection-end-line="170" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WallSquareWidget.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/WallSquareWidget.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#278#279#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,8 +126,8 @@
       <file leaf-file-name="WallSquare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="238">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,14 +136,9 @@
       <file leaf-file-name="PlayerSquare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="83" column="31" lean-forward="true" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
-              <folding>
-                <element signature="e#2818#2819#0" expanded="true" />
-                <element signature="e#2851#2852#0" expanded="true" />
-                <element signature="e#4345#4346#0" expanded="true" />
-                <element signature="e#4406#4407#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="373">
+              <caret line="139" column="5" lean-forward="false" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,16 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/Wall.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/elements/Wall.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/elements/Element.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/Square.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/elements/WallElement.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/elements/PlayerElement.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/map/Map.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/PlayerElement.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/CoordinatesInput.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/WallSquare.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/Map.java" />
@@ -231,13 +214,23 @@
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/player/Player.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/corridor/player/ai/GoToSmallestManhattanDistance.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/IO.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java" />
-        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.form" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.form" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/IsSquareWidget.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/PlayerSquareWidget.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/WallSquareWidget.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Square.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/IsSquare.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapCellRenderer.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.java" />
         <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java" />
+        <option value="$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java" />
       </list>
     </option>
   </component>
@@ -270,10 +263,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -291,6 +283,29 @@
               <item name="Corridor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="quoridor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Corridor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Corridor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="quoridor" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Corridor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Corridor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="quoridor" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MapGui" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="Corridor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Corridor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="quoridor" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="SquareWidget" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="Corridor" type="b2602c69:ProjectViewProjectNode" />
@@ -324,6 +339,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,7 +511,8 @@
       <workItem from="1512305954480" duration="9307000" />
       <workItem from="1512340266489" duration="7445000" />
       <workItem from="1512380548028" duration="2111000" />
-      <workItem from="1512394408512" duration="10639000" />
+      <workItem from="1512394408512" duration="12078000" />
+      <workItem from="1512466058085" duration="5110000" />
     </task>
     <task id="LOCAL-00001" summary="first functional version&#10;(bad rules)">
       <created>1509956679518</created>
@@ -630,11 +647,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512405117757</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add jump over player move">
+      <created>1512408666662</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1512408666662</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110403000" />
+    <option name="totallyTimeSpent" value="116952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -661,7 +685,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18976545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19189766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34019503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -704,7 +728,9 @@
     <MESSAGE value="- fix artifact build&#10;- add index out of bound exception to loop on input" />
     <MESSAGE value="fix move action tests" />
     <MESSAGE value="- validate action before executing it&#10;- finish GoToSmallestManhattanDistance&#10;- add 1 second pause during artificial player turn" />
-    <option name="LAST_COMMIT_MESSAGE" value="- validate action before executing it&#10;- finish GoToSmallestManhattanDistance&#10;- add 1 second pause during artificial player turn" />
+    <MESSAGE value="add jump over player move" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jump over player move" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,18 +739,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/elements/PlayerElement.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/elements/WallElement.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/Map.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/Square.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/elements/PlayerElement.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/elements/WallElement.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/Map.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/Square.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/elements/PlayerElement.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/elements/WallElement.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/Map.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/map/Square.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/Main.java" />
@@ -837,55 +851,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Action.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+        <state relative-caret-position="459">
+          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="83" column="31" lean-forward="true" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
-          <folding>
-            <element signature="e#2818#2819#0" expanded="true" />
-            <element signature="e#2851#2852#0" expanded="true" />
-            <element signature="e#4345#4346#0" expanded="true" />
-            <element signature="e#4406#4407#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="false" />
+            <element signature="e#371#372#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/ai/GoToSmallestManhattanDistance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+        <state relative-caret-position="493">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -894,20 +877,154 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="99" column="33" lean-forward="true" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+        <state relative-caret-position="1428">
+          <caret line="97" column="33" lean-forward="false" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2931#2932#0" expanded="true" />
-            <element signature="e#2965#2966#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+            <element signature="e#2891#2892#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/JPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="64" column="13" lean-forward="false" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/table/DefaultTableColumnModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/IsSquareWidget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/PlayerSquareWidget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/WallSquareWidget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/SquareWidget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/PlayerSquare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="139" column="5" lean-forward="false" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/WallSquare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/IsSquare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/table/TableCellRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="37" column="17" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapCellRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/gui/MapGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/Quoridor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="339">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/uga/ai/quoridor/map/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="170" column="63" lean-forward="false" selection-start-line="170" selection-start-column="63" selection-end-line="170" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -2,6 +2,7 @@ package fr.uga.ai.quoridor.map;
 
 import fr.uga.ai.quoridor.IO;
 import fr.uga.ai.quoridor.Quoridor;
+import fr.uga.ai.quoridor.gui.MapGui;
 import fr.uga.ai.quoridor.player.Player;
 
 import java.util.HashMap;
@@ -83,8 +84,9 @@ public class Map {
     }
 
     public boolean searchOpenPath(Coordinates from, Coordinates to) {
+        // TODO to improve
         IO.println("from " + from.x + from.y + " to " + to.x + to.y);
-        // create a new Path Object from the recursive searchContinuousWall and return its openness
+        // create a new Path Object from the recursive search and return its openness
         return new Path(playerMap[from.x][from.y].findPath(new HashSet<>(), playerMap[to.x][to.y])).isOpen();
     }
 
@@ -120,15 +122,15 @@ public class Map {
                 int ywallBottom = yplayer;
                 int xwall = xplayer;
                 // player square
-                map += playerMap[xplayer][yplayer].toString();
+                map += drawPlayerSquare(xplayer, yplayer, playerMap[xplayer][yplayer]);
                 if (xwall < WALL_MAP_SIZE) {
                     // check top right wall
                     if (ywallTop >= 0 && wallMap[xwall][ywallTop].isVertical())
-                        map += wallMap[xwall][ywallTop].toString(Side.BOTTOM);
+                        map += drawWallSquare(xwall, ywallBottom, wallMap[xwall][ywallTop], Side.BOTTOM);
                     else
                         // check bottom right wall
                         if (ywallBottom < WALL_MAP_SIZE)
-                            map += wallMap[xwall][ywallBottom].toString(Side.TOP);
+                            map += drawWallSquare(xwall, ywallBottom, wallMap[xwall][ywallBottom], Side.TOP);
                         else
                             map += WallSquare.noWallCharacter;
                 }
@@ -139,10 +141,10 @@ public class Map {
                 map += " |";
                 int ywall = yplayer;
                 for (int xwall = 0; xwall < WALL_MAP_SIZE; xwall++) {
-                    map += wallMap[xwall][ywall].toString(Side.LEFT);
+                    map += drawWallSquare(xwall, ywall, wallMap[xwall][ywall], Side.LEFT);
                     map += "+";
                     if (xwall + 1 == WALL_MAP_SIZE)
-                        map += wallMap[xwall][ywall].toString(Side.RIGHT);
+                        map += drawWallSquare(xwall, ywall, wallMap[xwall][ywall], Side.RIGHT);
                 }
                 map += "|\n";
             }
@@ -158,6 +160,16 @@ public class Map {
                 " - " +
                 Quoridor.playerTwo.toString() + " " + Integer.toString(Quoridor.playerTwo.getWallBank()) + "\n";
         return map;
+    }
+
+    private String drawPlayerSquare(int x, int y, PlayerSquare playerSquare) {
+        MapGui.getInstance().setCellString(x * 2, y * 2, playerSquare.toString());
+        return playerSquare.toString();
+    }
+
+    private String drawWallSquare(int x, int y, WallSquare wallSquare, Side side) {
+        MapGui.getInstance().setCellString(x * 2 + 1, y * 2 + 1, wallSquare.toString(side));
+        return wallSquare.toString(side);
     }
 
     public PlayerSquare getPlayerSquareFromCoordinates(Coordinates coordinates) {

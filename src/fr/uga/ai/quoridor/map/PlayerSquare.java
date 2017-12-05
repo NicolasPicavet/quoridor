@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class PlayerSquare {
+public class PlayerSquare implements IsSquare {
 
     private Coordinates coordinates;
     private Player player;
@@ -31,7 +31,7 @@ public class PlayerSquare {
         // do the searchContinuousWall for each side of the square
         Set<PlayerSquare> next = new HashSet<>();
         for (Side side : Side.values()) {
-            // check that there is no wall between this Square and the next
+            // check that there is no wall between this IsSquare and the next
             if (!hasWallWith(neighbours.get(side))) {
                 next = neighbours.get(side).findPath(origin, destination);
                 // if the searchContinuousWall return something else than null it mean it has reach destination

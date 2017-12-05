@@ -3,7 +3,7 @@ package fr.uga.ai.quoridor.map;
 import java.util.*;
 import java.util.Map;
 
-public class WallSquare {
+public class WallSquare implements IsSquare {
 
     public enum State {
         HORIZONTAL, VERTICAL, BOTH, NONE;
